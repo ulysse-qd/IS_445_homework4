@@ -1,16 +1,30 @@
-const number_1 = prompt("Enter the first number.");
-const number_2 = prompt("Enter the second number.");
+const values = [3, 11, 7, 2, 9, 10];
 
-if (!isNaN(number_1) || !isNaN(number_2)) {
-  console.log(Number(number_1) + Number(number_2))
-  console.log(number_1 - number_2)
-  console.log(number_1 * number_2)
-  if (number_2 == 0) {
-    console.log("Can't divide by 0 nor calculate the modulo")
-  } else {
-    console.log(number_1 / number_2)
-    console.log(number_1 % number_2)
-  }
-} else {
-  console.log("Wrong inputs.");
+function array_sums() {
+  let sum = 0
+  for (let i = 0; i < values.length; i++)
+    sum += values[i]
+  return (sum)
 }
+
+function min_value() {
+  let min = values[0]
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] < min) {
+      min = values[i]
+    }
+  }
+  return (min)
+}
+
+function max_value() {
+  let max = values[0]
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] > max) {
+      max = values[i]
+    }
+  }
+  return (max)
+}
+
+console.log(array_sums(), min_value(), max_value())

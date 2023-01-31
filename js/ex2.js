@@ -1,21 +1,11 @@
-const yourName = prompt("What is your name?");
-const units = prompt("How many units did you complete at college?");
-let gradeStanding = ''
+const fahrenheit1 = prompt("Enter a temperature in Fahrenheit to convert in Celsius.");
+const fahrenheit2 = prompt("Enter a temperature in Fahrenheit to convert in Celsius.");
+const fahrenheit3 = prompt("Enter a temperature in Fahrenheit to convert in Celsius.");
 
-if (yourName === '') {
-  console.log("Sorry, " + yourName + " is not a valid entry.")
-} else {
-  switch (true) {
-    case units > 0 && units < 31: gradeStanding = 'Freshman';
-      break;
-    case units > 30 && units < 61: gradeStanding = 'Sophomore';
-      break;
-    case units > 60 && units < 91: gradeStanding = 'Junior';
-      break;
-    case units > 91: gradeStanding = 'Senior';
-      break;
-    default: console.log("Sorry, " + units + " is not a valid entry.")
-  }
-  console.log("Hello " + yourName);
-  console.log("Your grade standing is " + gradeStanding);
+function FahrenheitConverter(fahrenheit) {
+  return (Math.round((fahrenheit - 32) * (5 / 9)))
 }
+
+console.log(fahrenheit1 + ' degree Fahrenheit = ' + FahrenheitConverter(fahrenheit1) + ' degrees Celsius')
+console.log('Temperature of ' + fahrenheit2 + ' Fahrenheit is equivalent to ' + FahrenheitConverter(fahrenheit2) + ' degrees Celsius')
+console.log('Water boiling temperate is ' + fahrenheit3 + ' Fahrenheit or ' + FahrenheitConverter(fahrenheit3) + ' Celsius')

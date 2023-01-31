@@ -1,28 +1,14 @@
-const day = prompt("Enter the 3 letters abbreviation of a day of the week.");
-let dayOfTheWeek = ''
+const r = Number(prompt("Enter the circle radius:"));
 
-if (day.length !== 3) {
-  console.log("Sorry, " + day + " is not a valid entry.")
-} else {
-  switch (true) {
-    case day === "mon": dayOfTheWeek = 'Monday';
-      break;
-    case day === "tue": dayOfTheWeek = 'Tuesday';
-      break;
-    case day === "wed": dayOfTheWeek = 'Wednesday';
-      break;
-    case day === "thu": dayOfTheWeek = 'Thursday';
-      break;
-    case day === "fri": dayOfTheWeek = 'Friday';
-      break;
-    case day === "sat": dayOfTheWeek = 'Saturday';
-      break;
-    case day === "sun": dayOfTheWeek = 'Sunday';
-      break;
-    default: console.log("Sorry, " + day + " is not the abbreviation of an existing day.")
-  }
-  if (dayOfTheWeek !== '') {
-    console.log("You entered: " + day);
-    console.log("The following day is: " + dayOfTheWeek);
+const circle = {
+  radius: r,
+  circumference: function () {
+    return 2 * Math.PI * this.radius
+  },
+  area: function () {
+    return Math.PI * (this.radius ** 2)
   }
 }
+
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);
