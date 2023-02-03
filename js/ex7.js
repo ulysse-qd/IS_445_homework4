@@ -1,21 +1,17 @@
-let hours = prompt("Enter the hours");
-let minutes = prompt("Enter the minutes");
-let seconds = prompt("Enter the seconds");
+let guessed_nb = Number(prompt("Guess the number"));
+const generated_nb = Math.floor(Math.random() * 100) + 1
+let count = 0
 
-if (seconds < 59) {
-  seconds++
-} else {
-  seconds = 0;
-  if (minutes < 59) {
-    minutes++
-  } else {
-    minutes = 0;
-    if (hours < 23) {
-      hours++
-    } else {
-      hours = 0
-    }
+while (guessed_nb != generated_nb) {
+  if (guessed_nb < generated_nb) {
+    console.log("Too low, guess again.")
+    count++
+    guessed_nb = Number(prompt("Guess the number"));
+  } else if (guessed_nb > generated_nb) {
+    console.log("Too high, guess again.")
+    count++
+    guessed_nb = Number(prompt("Guess the number"));
   }
 }
 
-console.log(hours + "h" + minutes + "m" + seconds + "s")
+console.log("Correct! It took you", count, "attempts to guess the correct number.")

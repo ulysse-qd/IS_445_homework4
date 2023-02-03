@@ -1,13 +1,16 @@
-let password = '';
-let count = 0;
+let word_list = []
+let word_entered = ''
 
-while (password !== 'secret' && count !== 3) {
-  password = prompt('Enter the password.');
-  count++;
+while (word_entered.toLocaleUpperCase() != 'STOP') {
+  word_entered = prompt('Enter a word')
+  word_list.push(word_entered)
 }
 
-if (password == 'secret') {
-  console.log("You entered the correct password after " + count + " attemps(s)")
+if (word_list[0].toLocaleUpperCase() == 'STOP') {
+  console.log('No words to display, Stop was the first word entered.')
 } else {
-  console.log("Your account is locked! You failed to enter the correct password " + count + " time(s)")
+  console.log('You entered the following words:')
+  for (let i = 0; i < word_list.length - 1; i++) {
+    console.log(word_list[i])
+  }
 }
